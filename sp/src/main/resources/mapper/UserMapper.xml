@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.sp.demo.dao.UserDao">
+
+    <select id="getUser" parameterType="String" resultMap="TokenAndUser">
+        SELECT u.*,t.* FROM user u,user_token t WHERE name = #{name} AND u.token_id=t.id
+    </select>
+
+</mapper>
+
